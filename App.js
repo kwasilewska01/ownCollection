@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import { getPlatformOrientationLockAsync } from 'expo/build/ScreenOrientation/ScreenOrientation';
 // import { Counter } from '../AwesomeProject/src/components/counter';
 
 export default class App extends React.Component {
@@ -7,7 +8,7 @@ export default class App extends React.Component {
     
     return (
       <React.Fragment>
-
+        <View style={styles.body}>
       <View style={styles.container}>
 
         <View style={styles.card}>
@@ -68,7 +69,7 @@ export default class App extends React.Component {
         </View>
 
       </View>
-    
+      </View>
     </React.Fragment>
 
     );
@@ -76,11 +77,17 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  body: {
+    flex: 1,
+    // width: 100,
+    // height: 100,
+    backgroundColor: "#f6f6fe",
+  },
   container: {
     flex: 1,
     flexDirection: 'row',
-    marginBottom: 40,
-    marginTop: 40,
+    marginBottom: 70,
+    marginTop: 90,
     marginLeft: 30,
     marginRight: 30,
     justifyContent: 'space-between',
@@ -90,10 +97,16 @@ const styles = StyleSheet.create({
   card: {
     position: "relative",
     width: 140, 
-    height: 160,
+    height: 140,
     borderWidth: 1,
-    borderColor: '#999',
+    borderColor: '#ffffff',
     borderRadius: 25,
+    backgroundColor: "#ffffff",
+    shadowColor: '#C4C4FE',
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.37,
+    shadowRadius: 7.49, 
+    elevation: 12,
   },
   counterContainer: {
     position: "relative",
@@ -104,8 +117,8 @@ const styles = StyleSheet.create({
     color: '#373E91',
     borderRadius: 15,
     padding: 5,
-    marginTop: 13,
-    marginLeft:13,
+    marginTop: 15,
+    marginLeft:15,
     alignContent: 'space-around',
     fontWeight: 'bold',
     textAlign: 'center',
@@ -114,45 +127,37 @@ const styles = StyleSheet.create({
     width: 40,
   },
   textContainer: {
-    // flexDirection: 'row',
     position: 'relative',
     width: 80,
-    // height:20,
     fontWeight: 'bold',
-    color: '#373E91',
-    // marginBottom: 13,
-    marginLeft: 8,
-    // textAlignVertical: 'bottom',
+    color: 'black',
+    marginLeft: 11,
     fontSize: 18,
   },
   textSubContainer: {
-    // flexDirection: 'row',
     position: 'relative',
     width: 140,
-    // height:20,
     fontWeight: 'bold',
-    color: '#373E91',
-    // marginBottom: 13,
-    marginLeft: 8,
-    // textAlignVertical: 'bottom',
-    fontSize: 18,
+    color: 'black',
+    marginLeft: 11,
+    fontSize: 17,
   },
   cardRightCoulumnImg: {
     width:100,
     height:100,
   },
   imageContainer: {
-    width: 100, 
-    height: 90,
-    marginTop:12,
-    marginLeft: 48,
+    width: 85, 
+    height: 75,
+    marginTop:10,
+    marginLeft: 56,
   },
   cardTopRow: {
     // backgroundColor: 'purple',
     flexDirection: 'row',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-    height: 100,
+    height: 80,
   },
   cardDownRow: {
     // backgroundColor: 'grey',
